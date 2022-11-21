@@ -1,0 +1,41 @@
+.container{
+
+    display: flex;
+    justify-content: center;
+}
+
+.box{
+    position: relative;
+}
+
+.input{
+    transition: all 0.2s;
+    height: 2rem;
+    padding: 0px 38px 0px 10px;
+    border: 1px rgb(255, 255, 255) solid;
+    font-size: 1rem;
+    font-weight: 400;
+    text-decoration: none;
+    color: white;
+    background-color: black;
+}
+
+.input::placeholder { color: rgb(187, 187, 187); }
+
+.input:focus{
+    transition: all 0.2s;
+    box-shadow: none;
+    border: 1px purple solid;
+    outline: none;
+}
+
+.searchBtn{
+    position: absolute;
+    right: 5px;
+    top: 0;
+    cursor:default;
+    height: 100%;
+    color: white;
+    border:none;
+    background:none;
+}

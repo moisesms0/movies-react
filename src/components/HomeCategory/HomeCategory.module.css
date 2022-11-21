@@ -1,0 +1,17 @@
+.title {
+  text-align: left;
+  margin: 20px 0 0 43px;
+  font-size: 1.5rem;
+}
+
+.moviesGrid {
+  display: grid;
+  grid-gap: 1.5rem;
+  padding: 10px 40px 0 40px;
+  justify-content: center;
+  text-align: center;
+  animation-duration: 1s;
+  animation-name: slidein;
+}
+
+
