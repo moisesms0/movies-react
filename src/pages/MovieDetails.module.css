@@ -1,12 +1,66 @@
+
+/* -------------- Contenedor con color -------------- */
+.cont {
+  background-color: rgb(25, 25, 25);
+  padding-top: 80px;
+}
+
+/* -------------- Contenedor datos de pelicula -------------- */
 .detailsContainer {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-
+  width: 80%;
+  margin: auto;
   padding: 2rem 0 2rem 0;
-
-  background-color: rgb(0, 0, 26);
 }
+
+/* -------------- Columnas -------------- */
+
+.col {
+  flex-grow: 1;
+  margin: 1rem;
+  animation-duration: 0.5s;
+  animation-name: slidein;
+}
+
+.img {
+  border-radius: 10px;
+  height: 28rem;
+  width: 20rem;
+  max-width: 20rem;
+
+  margin: 0;
+}
+
+.principal {
+  position: relative;
+  width: 50%;
+}
+
+.datos {
+  margin-left: 5rem;
+  flex-grow: 0;
+  background-color: rgb(16, 16, 16);
+  padding: 20px;
+  margin-right: 0;
+  border-radius: 5px;
+  color: white;
+  align-self: center;
+  display: flex;
+}
+
+.datos div {
+  padding-bottom: 1.5rem;
+}
+.datos div p {
+  font-weight: 400;
+}
+
+.datos div h3 {
+  margin: 0 0 1rem;
+  font-weight: 400;
+}
+
+/* -------------- Animacion fade in --------------*/
 
 @keyframes slidein {
   from {
@@ -17,31 +71,29 @@
   }
 }
 
-.col {
-  max-width: 50rem;
-  width: 50%;
-  margin: 1rem;
-  animation-duration: 0.5s;
+/* -------------- Peliculas similares --------------*/
+
+.similares {
+  width: 80%;
+  margin: auto;
+  margin-top: 1rem;
+}
+
+.moviesGrid {
+  display: grid;
+  grid-gap: 1.5rem;
+  padding: 0px 0px 0 0px;
+  justify-content: center;
+  text-align: center;
+  animation-duration: 1s;
   animation-name: slidein;
 }
 
-.datos {
-  margin-left: 5rem;
-  flex-basis: content;
-  background-color: rgb(236, 236, 236);
-  padding: 20px;
-  border-radius: 15px;
-  color: black;
 
-}
 
-.img {
-  border-radius: 10px;
-  height: auto;
-  width: 300px;
-  max-width: 100%;
-  margin: 0;
-}
+
+/* -------------- Contenido dentro de las columnas -------------- */
+
 p {
   margin: 0;
   font-size: 1.2rem;
@@ -62,6 +114,7 @@ p {
 
 .descripcion {
   margin-top: 1rem;
+  margin-bottom: 3rem;
 }
 
 .facts {
@@ -76,10 +129,98 @@ p {
   display: block;
 }
 
-.similares {
-  width: 80%;
-  margin: auto;
-  margin-top: 1rem;
+.imdb_container {
+  position: absolute;
+  bottom: 0;
+}
+
+.imdb_button {
+  text-decoration: none;
+  color: Black;
+  font-weight: bold;
+  background-color: #f5c518;
+  padding: 0.2rem 0.5rem;
+  border-radius: 5px;
+}
+
+
+
+
+/* Media Queries*/
+
+@media (max-width: 1500px) {
+  .datos {
+    flex-direction: row;
+    margin: 1rem 0 0 0;
+    flex-wrap: wrap;
+  }
+  .detailsContainer {
+    flex-wrap: wrap;
+  }
+  .datos div {
+    padding: 0 1rem;
+  }
+
+  .title {
+    margin: 0;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 1500px) {
+  .moviesGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1000px) {
+  .moviesGrid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1500px) {
+  .moviesGrid {
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+  }
+  .detailsContainer {
+    flex-wrap: nowrap;
+  }
+  .datos {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 600px) {
+  .moviesGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-gap: 0.8rem;
+    padding: 10px 10px 0 10px;
+  }
+}
+
+@media (max-width: 890px) {
+  .img {
+    margin: auto;
+  }
+  .principal {
+    text-align: center;
+  }
+  .facts {
+    justify-content: center;
+  }
+  .descripcion {
+    margin-bottom: 4rem;
+  }
+  .datos {
+    margin-top: 0;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+  .imdb_container {
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
 
 @media (max-width: 560px) {

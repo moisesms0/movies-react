@@ -3,16 +3,15 @@ import { get } from "../../utils/htttpClient";
 import { MovieCard } from "../MovieCard/MovieCard";
 import { Spinner } from "../Spinner/Spinner";
 import Style from "./HomeCategory.module.css";
-import "../MoviesGrid/MoviesGrid"
 
-export function PopularMovies({searchUrl, titulo}) {
+export function HomeCategory({ searchUrl, titulo }) {
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     setIsLoading(true);
 
-    console.log(searchUrl)
+
     const searchURL = searchUrl;
 
     get(searchURL).then((data) => {
@@ -26,13 +25,13 @@ export function PopularMovies({searchUrl, titulo}) {
   }
 
   return (
-    <div>
+    <section>
       <h1 className={Style.title}>{titulo}</h1>
       <ul className="moviesGrid">
         {movies.map((movie) => (
-          <MovieCard key={movie.id} movie={movie} tipoBol={false}/>
+          <MovieCard key={movie.id} movie={movie} tipoBol={false} />
         ))}
       </ul>
-    </div>
+    </section>
   );
 }

@@ -1,34 +1,103 @@
-header{
-    background-color: rgb(0, 0, 0);
-    height: 5rem;
+.main{
+  position:fixed;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.349);
+
+}
+
+header {
+  background-color: rgb(16, 16, 16);
+  height: 5rem;
+
+  width: auto;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem 0 1rem;
+  justify-content: space-between;
+}
+
+h2 {
+  margin: 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo a {
+  margin-left: 30px;
+  text-decoration: none;
+  color: #e5e5e5;
+  transition: 0.5s all;
+}
+
+.logo a:hover {
+  transition: 0.4s all;
+  color: rgb(185, 185, 185);
+}
+
+.loginButton {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid rgb(172, 172, 185);
+  background-color: rgb(158, 167, 247);
+}
+
+.menuIcon {
+  height: 100%;
+  color: white;
+  border: none;
+  background: none;
+  display: none;
+  align-items: center;
+  text-align: center;
+
+
+}
+
+.hamburguer{
+  cursor: pointer;
+}
+
+.menuOverlay{
+  position: fixed;
+  background-color: rgb(16, 16, 16);
+  z-index: -2;
+  top: -10rem;
+  left: 0;
+  width: 100%;
+
+  overflow:hidden;
+  padding-top: 5em;
+  text-align: center;
+  transition: all 0.2s linear;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+}
+
+.menuOverlay a{
+  color:#e5e5e5;
+  text-decoration: none;
+  margin-bottom: 1rem;
+  transition: 0.5s all;
+
+}
+
+.menuOverlay a:hover{
+  transition: 0.4s all;
+  color: rgb(185, 185, 185);
+}
+
+@media (max-width: 600px) {
+  .menuIcon {
     display: flex;
-    align-items: center;
-    padding: 0 3rem 0 3rem;
-    justify-content: space-between;
+  }
+  .link {
+    display: none;
+  }
 }
-
-h2{
-    margin: 0;
-    
-}
-
-.logo{
-display: flex;
-align-items: center;
-}
-
-
-
-.logo a{
-    padding-left: 30px;
-    text-decoration: none;
-    color: white;
-}
-
-.loginButton{
-padding: 8px;
-border-radius: 5px;
-border: 1px solid rgb(172, 172, 185);
-background-color: rgb(158, 167, 247);
-}
-

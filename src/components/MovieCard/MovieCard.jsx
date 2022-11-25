@@ -2,10 +2,10 @@ import styles from "./MovieCard.module.css";
 import { Link } from "react-router-dom";
 
 export function MovieCard({ movie, tipoBol }) {
-
   // Only movies with poster
   if (movie.poster_path) {
     const imageUrl = "https://image.tmdb.org/t/p/w300" + movie.poster_path;
+  
 
     // Category and type check
     let category = movie.title ? "/movie/" : "/show/";
@@ -28,13 +28,15 @@ export function MovieCard({ movie, tipoBol }) {
             <img
               className={styles.movieImg}
               src={imageUrl}
-              alt={movie.title}
+              alt={movie.title + " image" || movie.name + " image"}
             ></img>
             <div className={styles.title}>
               <h2>{movie.title || movie.name}</h2>
               <span>{fecha}</span>
             </div>
-            <span className={styles.puntuacion}>{movie.vote_average}</span>
+            <span className={styles.puntuacion}>
+              {movie.vote_average.toFixed(1)}
+            </span>
             <span className={styles.tipo + hidden}>{tipo}</span>
           </div>
         </Link>

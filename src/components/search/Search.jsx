@@ -17,7 +17,6 @@ export function Search() {
       <div className={style.box}>
         <input
           spellCheck="false"
-          autoFocus
           className={style.input}
           type="text"
           placeholder="Titulo..."
@@ -34,7 +33,11 @@ export function Search() {
           }}
         />
 
-        <button className={style.searchBtn} type="submit">
+        <button
+          aria-label="Search button"
+          className={style.searchBtn}
+          type="submit"
+        >
           <FaSearch size={20} />
         </button>
       </div>
