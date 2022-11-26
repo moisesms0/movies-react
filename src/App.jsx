@@ -5,7 +5,7 @@ import { MovieDetails } from "./pages/MovieDetails";
 import { ShowDetails } from "./pages/ShowDetails";
 import { LandingPage } from "./pages/LandingPage";
 import { Home } from "./pages/home";
-import { lazy } from "react";
+
 
 function App() {
   return (
@@ -20,6 +20,7 @@ function App() {
           <Route path="/show/:movieid" element={<ShowDetails />} />
           <Route path="*" element={<Navigate replace to="/"></Navigate>} />
         </Routes>
+
       </main>
     </div>
   );

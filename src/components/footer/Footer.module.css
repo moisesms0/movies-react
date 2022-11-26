@@ -1,0 +1,53 @@
+.footerContainer {
+  padding: 0rem 2.5rem;
+  margin-top: 2rem;
+  padding-top: 1.7rem;
+  padding-bottom: .6rem;
+  box-shadow: 0px -10px 10px rgba(0, 0, 0, 0.336);
+  background-color: rgb(25, 25, 25);
+}
+
+h4 {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+.icon {
+  padding-right: 0.3rem;
+  align-self: center;
+}
+
+.sections {
+  display: flex;
+  justify-content: center;
+}
+
+.sections div {
+  margin: 0 2rem;
+}
+
+ul > span {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  line-height: 1.125;
+  font-weight: 100;
+  padding-bottom: 0.5rem;
+}
+
+ul > a{
+    color: white;
+    text-decoration: none;
+    transition: all .5s;
+}
+
+ul > a:hover{
+    transition: all .5s;
+    color: rgb(185, 185, 185);
+}
+
