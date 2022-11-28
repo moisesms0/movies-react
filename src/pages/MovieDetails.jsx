@@ -42,6 +42,9 @@ export function MovieDetails() {
     const minutos = (Math.floor(segundosP / 60) % 60).toString();
     tiempo = horas + "h " + minutos + "m";
   }
+  else if (movieSingular.runtime === 0){
+    tiempo = "No disponible"
+  }
 
   let presupuesto =
     movieSingular.budget !== 0
@@ -62,6 +65,10 @@ export function MovieDetails() {
   const imageUrl =
     "https://image.tmdb.org/t/p/w500" + movieSingular.poster_path;
 
+    
+  let overview = movieSingular.overview
+  ? movieSingular.overview
+  : "No disponible";
 
 
 
@@ -87,7 +94,7 @@ export function MovieDetails() {
             <p className={style.tagline}>{movieSingular.tagline}</p>
             <p className={style.descripcion}>
               <b>Vista General</b>
-              <br /> {movieSingular.overview}
+              <br /> {overview}
             </p>
             <div className={style.imdb_container}>
               <a
