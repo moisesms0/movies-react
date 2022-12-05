@@ -1,4 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500&display=swap');
+
+:root[data-theme="dark"]{
+    --primary-color:rgb(16, 16, 16);
+    --secondary-color:rgb(25, 25, 25);
+    --text-color:rgba(255, 255, 255, 0.87);
+    --text-hover:rgba(206, 206, 206, 0.87);
+    --text-different: #b1b1b1;;
+    --shadow-color:rgba(0, 0, 0, 0.705);
+    --theme-color:black;
+    --placeholder:rgba(187, 187, 187, 0.801);
+    --border-color:rgb(53, 53, 53);
+    
+}
+
+:root[data-theme="light"]{
+    --primary-color:rgb(224, 224, 224);
+    --secondary-color:rgba(189, 189, 189, 0.651);
+    --text-color:rgba(0, 0, 0, 0.87);
+    --text-hover:rgba(61, 61, 61, 0.87);
+    --text-different: #000000;;
+    --shadow-color:rgb(187, 187, 187); 
+    --theme-color:rgba(206, 206, 206, 0.5);
+    --placeholder:rgb(99, 99, 99);
+    --border-color:rgb(189, 189, 189);
+}
+
+*{
+    transition: background-color 1s, box-shadow 1s;
+}
+
 
 body {
   margin: 0;
@@ -9,13 +40,12 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  background-color: rgb(16, 16, 16);
-  color: white;
+  background-color: var(--primary-color);
 }
 
 
 body, input{
-  font-family: 'Oswald','Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Nunito','Segoe UI', 'Roboto', 'Oxygen',
   'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue';
     font-weight: 300 ;
 }

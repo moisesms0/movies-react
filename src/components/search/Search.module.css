@@ -11,16 +11,16 @@
   transition: all 0.2s;
   height: 2rem;
   padding: 0px 38px 0px 10px;
-  border: 1px rgb(53, 53, 53) solid;
+  border: 1px var(--border-color) solid;
   font-size: 1rem;
   font-weight: 400;
   text-decoration: none;
-  color: white;
-  background-color: black;
+  color: var(--text-color);
+  background-color: var(--theme-color);
 }
 
 .input::placeholder {
-  color: rgb(187, 187, 187);
+  color: var(--placeholder);
 }
 
 .input:focus {
@@ -36,7 +36,7 @@
   top: 0;
   cursor: default;
   height: 100%;
-  color: white;
+  color: var(--text-color);
   border: none;
   background: none;
 }

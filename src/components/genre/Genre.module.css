@@ -1,0 +1,77 @@
+.banner {
+  height: 30rem;
+  box-shadow: inset 0 0 0 1000px #000000a2;
+  background-size: cover;
+  margin: 40px 40px 20px;
+  border-radius: 10px;
+  color: rgba(255, 255, 255, 0.87);
+  position: relative;
+}
+
+.data {
+  display: flex;
+  flex-direction: column;
+  width: 30rem;
+  height: 100%;
+  justify-content: flex-end;
+}
+
+.title {
+  font-weight: 400;
+  padding-left: 1rem;
+  font-size: 1.4rem;
+}
+
+.overview {
+  font-weight: 200;
+  padding: 0 0 1rem 1rem;
+}
+
+.genre {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.verButtonLink {
+  background-color: rgba(206, 206, 206, 0.144);
+  text-decoration: none;
+  padding: 0.5rem;
+  color: rgba(255, 255, 255, 0.87);
+  font-weight: 300;
+  font-size: 1rem;
+  font-family: "nunito", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+
+}
+
+.verButtonLink:hover{
+   color:rgba(197, 197, 197, 0.87)
+}
+
+.verButton {
+  margin-bottom: 1.5rem;
+  border: none;
+  background: none;
+}
+
+@media (max-width: 600px) {
+  .data {
+    height: 100%;
+    width: 100%;
+  }
+  .banner {
+    margin: 40px 20px 20px;
+  }
+  .genre {
+    left: 0;
+    right: 0;
+  }
+
+  .overview,
+  .title {
+    padding-right: 1rem;
+  }
+}

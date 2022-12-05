@@ -9,7 +9,7 @@ export function LandingPage() {
 
     const debouncedSearch = useDebounce(search, 400);
   return (
-    <div style={{paddingTop:"80px"}}>
+    <div>
  
       <MoviesGrid key={debouncedSearch} search={debouncedSearch} />
     </div>

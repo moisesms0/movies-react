@@ -3,8 +3,8 @@
   margin-top: 2rem;
   padding-top: 1.7rem;
   padding-bottom: .6rem;
-  box-shadow: 0px -10px 10px rgba(0, 0, 0, 0.336);
-  background-color: rgb(25, 25, 25);
+  box-shadow: 0px -10px 10px var(--shadow-color);
+  background-color: var(--secondary-color);
 }
 
 h4 {
@@ -41,13 +41,13 @@ ul > span {
 }
 
 ul > a{
-    color: white;
+    color: var(--text-color);
     text-decoration: none;
     transition: all .5s;
 }
 
 ul > a:hover{
     transition: all .5s;
-    color: rgb(185, 185, 185);
+    color: var(--text-hover);
 }
 

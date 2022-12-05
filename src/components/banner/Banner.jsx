@@ -1,14 +1,40 @@
-import Styles from "./Banner.module.css";
+import { useEffect, useState } from "react";
+import { get } from "../../utils/htttpClient";
+import style from "./Banner.module.css";
 
 export function Banner() {
+  const [movies, setMovies] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [banner, setBanner] = useState();
+
+
+  useEffect(() => {
+
+    get("/discover/movie?language=es-ES").then((data) => {
+      setMovies(data.results);
+      setIsLoading(false)
+    });
+  }, []);
+
+  if (!isLoading && !banner) {
+    setBanner("https://image.tmdb.org/t/p/original" + movies[0].backdrop_path);
+  }
+
+  let title = (movies[0]) ? movies[0].title : "";
+  let overview =  (movies[0]) ? movies[0].overview : "";
+
+
   return (
-    <section className={Styles.banner}>
-      <div className={Styles.container}>
-        <h2 className={Styles.title}>DMS Films</h2>
-        <p className={Styles.paragraph}>
-          Millones de peliculas y series por descubrir
-        </p>
-      </div>
-    </section>
+    <div
+    className={style.banner}
+    style={{
+      backgroundImage: "url(" + banner + ")",
+    }}
+  >
+    <div className={style.data}>
+      <p className={style.title}>{title}</p>
+      <p className={style.overview}>{overview}</p>
+    </div>
+  </div>
   );
 }

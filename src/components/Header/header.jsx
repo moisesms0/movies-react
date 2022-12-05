@@ -1,50 +1,94 @@
 import style from "./header.module.css";
 import { NavLink } from "react-router-dom";
-import { Search } from "../search/Search";
+import { FiHome, FiTrendingUp } from "react-icons/fi";
+import { useEffect, useState } from "react";
+import { get } from "../../utils/htttpClient";
+import { iconos } from "../../utils/icons";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { useState } from "react";
 
 export function Header() {
-  const [navOpen, setNavOpen] = useState(false);
+  const [genres, setGenres] = useState([]);
+  const [hidden, setHidden] = useState(true);
+
+  useEffect(() => {
+    get("/genre/movie/list?language=es-ES").then((data) => {
+      setGenres(data.genres);
+    });
+  }, []);
+
+  const removeAccents = (str) => {
+    return str
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toLowerCase();
+  };
 
   return (
-    <div className={style.main}>
-      <header>
-        <div className={style.logo}>
-          <NavLink to="/">
-            <h2>Movies</h2>
-          </NavLink>
-          <NavLink className={style.link} to="/">
-            Inicio
-          </NavLink>
-          <NavLink className={style.link} to="trending">
-            Trending
-          </NavLink>
+    <div className={style.aux}>
+      <div className={style.icono} onClick={() => setHidden(!hidden)}>
+        <GiHamburgerMenu />
+      </div>
+      <div
+        className={style.master}
+        style={{
+          left: hidden ? "-15rem" : "0",
+        }}
+      >
+        <div className={style.main}>
+          <div className={style.logo}>
+            <NavLink to="/" onClick={() => setHidden(!hidden)}>
+              <h2>Films</h2>
+            </NavLink>
+          </div>
+
+          <div className={style.links}>
+            <h3>Categorias</h3>
+            <NavLink
+              onClick={() => setHidden(!hidden)}
+              className={style.link}
+              to="/"
+            >
+              <FiHome className={style.icon} />
+              Inicio
+            </NavLink>
+            <NavLink
+              onClick={() => setHidden(!hidden)}
+              className={style.link}
+              to="trending"
+            >
+              <FiTrendingUp className={style.icon} />
+              Trending
+            </NavLink>
+          </div>
+
+          <div className={style.genres}>
+            <h3>Géneros</h3>
+            {genres?.map((genre, idx) => {
+              const Icon = iconos[idx];
+
+              return (
+                <NavLink
+                  onClick={() => setHidden(!hidden)}
+                  className={style.link}
+                  key={genre.id}
+                  to={
+                    "/genre/" +
+                    removeAccents(genre.name) +
+                    "?genreid=" +
+                    genre.id + "&name="+
+                    genre.name
+                  }
+                >
+                  <Icon className={style.icon} />
+                  {genre.name}
+                </NavLink>
+              );
+            })}
+          </div>
         </div>
 
-        <Search />
-        <button className={style.menuIcon}>
-          <GiHamburgerMenu
-            className={style.hamburguer}
-            size={22}
-            onClick={() => setNavOpen(!navOpen)}
-          />
-        </button>
-
-        <div
-          className={style.menuOverlay}
-          style={{
-            top: navOpen ? "0" : "-5rem",
-
-          }}
-        >
-  
-              <NavLink to="/" onClick={() => setNavOpen(!navOpen)}>Inicio</NavLink >
-   
-              <NavLink to="trending" onClick={() => setNavOpen(!navOpen)}>Trending</NavLink>
-
-        </div>
-      </header>
+        <header></header>
+      </div>
     </div>
   );
 }
