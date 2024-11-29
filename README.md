@@ -7,7 +7,8 @@
 4. [Tecnologías Utilizadas](#tecnologías-utilizadas)  
 5. [Instalación y Uso](#instalación-y-uso)  
    - [Requisitos Previos](#requisitos-previos)  
-   - [Pasos para la Instalación](#pasos-para-la-instalación)  
+   - [Pasos para la Instalación](#pasos-para-la-instalación)
+6. [Demo](#demo)
 6. [Contacto](#contacto)  
 
 ## **Introducción**  
@@ -68,6 +69,9 @@ Antes de comenzar, asegúrate de tener instalados:
    ```
    Esto abrirá la aplicación en tu navegador en la URL [http://localhost:3000](http://localhost:3000)
 
+
+## **DEMO**
+[https://movies-react-moi.vercel.app](https://movies-react-moi.vercel.app)
 
 ### **Contacto**
 - [Linkedin](https://www.linkedin.com/in/moisesms/)
