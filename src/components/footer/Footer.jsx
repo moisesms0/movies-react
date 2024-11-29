@@ -11,7 +11,7 @@ export function Footer() {
           <div className={style.contacto}>
             <h4>Contacto</h4>
             <ul className={style.list}>
-              <a href="">
+              <a  target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/moisesms0/">
                 <li>
                   <span>
                     <FiInstagram className={style.icon} />
@@ -19,7 +19,7 @@ export function Footer() {
                   </span>
                 </li>
               </a>
-              <a href="">
+              <a target="_blank" rel="noopener noreferrer" href="#">
                 <li>
                   <span>
                     <TfiWorld className={style.icon} />
@@ -27,7 +27,7 @@ export function Footer() {
                   </span>
                 </li>
               </a>
-              <a href="">
+              <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/moisés-miranda-santana-5172b1231/?originalSubdomain=es">
                 <li>
                   <span>
                     <FiLinkedin className={style.icon} />

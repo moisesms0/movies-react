@@ -1,11 +1,12 @@
+
 .footerContainer {
   padding: 0rem 2.5rem;
   margin-top: 2rem;
   padding-top: 1.7rem;
   padding-bottom: .6rem;
-  box-shadow: 0px -10px 10px var(--shadow-color);
+  box-shadow: 0px -7px 5px var(--shadow-color);
   background-color: var(--secondary-color);
-}
+  }
 
 h4 {
   margin: 0;
@@ -31,7 +32,7 @@ ul {
   margin: 0 2rem;
 }
 
-ul > span {
+ul > a {
   display: flex;
   align-items: center;
   box-sizing: border-box;
